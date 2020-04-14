@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Swift Vocabulary Table View Controller-->
         <scene sceneID="PQq-iu-OCa">
             <objects>
-                <tableViewController id="xr8-sX-7MP" sceneMemberID="viewController">
+                <tableViewController id="xr8-sX-7MP" customClass="SwiftVocabularyTableViewController" customModule="Swift_Vocabulary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="aL0-Vi-uth">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,6 +32,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="teZ-0U-L1F" kind="show" id="ICt-jK-9pv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,8 +42,43 @@
                             <outlet property="delegate" destination="xr8-sX-7MP" id="9xV-9y-vfI"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Bjg-ly-rWu"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZ0-Ty-Oqw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720.28985507246387" y="119.86607142857142"/>
+        </scene>
+        <!--Definition View Controller-->
+        <scene sceneID="QKS-PW-Xx5">
+            <objects>
+                <viewController id="teZ-0U-L1F" customClass="DefinitionViewController" customModule="Swift_Vocabulary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8o-S9-AHp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9lq-l4-K3m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XvF-Ah-jcx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2S9-6D-0hC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1606" y="120"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="diU-Se-xAF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lx6-vR-V9i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pIb-yy-zeW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xr8-sX-7MP" kind="relationship" relationship="rootViewController" id="cl7-9z-syc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hz7-W1-d0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-189.85507246376812" y="119.86607142857142"/>
         </scene>
